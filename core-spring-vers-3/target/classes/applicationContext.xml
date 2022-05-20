@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd" default-autowire="byType">
+    
+	<bean class="controller.InvoiceControllerWeb">
+		
+	</bean>
+	
+	<bean class="service.InvoiceServicePrefix">
+		
+		<property name="lastNumber" value="100" />
+		<property name="prefix" value="INV_" />
+	</bean>
+
+	<bean class="repository.InvoiceRepositoryDatabase" />
+
+</beans>
+
+
+<!-- autowire="byName"  -->
+<!--  
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+	<bean class="controller.InvoiceControllerWeb" autowire="byName">
+		
+	</bean>
+	
+	<bean id="invoiceService" class="service.InvoiceServicePrefix" autowire="byName">
+		
+		<property name="lastNumber" value="100" />
+		<property name="prefix" value="INV_" />
+	</bean>
+
+	<bean id="invoiceRepository" class="repository.InvoiceRepositoryDatabase" />
+
+</beans>
+-->
